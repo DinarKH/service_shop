@@ -63,9 +63,8 @@ class Shop_work(APIView):
     def post(self, request):
         serializer = ShopSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            el = Shop.objects.last().id
-            return Response({"id": el})
+            new_obj = serializer.save()
+            return Response({"id": new_obj.id})
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     """
