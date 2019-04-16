@@ -68,3 +68,12 @@ class Shop_work(APIView):
             return Response({"id": el})
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    """
+    Example
+    {"name":"Gulliver",
+    "city":1,
+    "street":1,
+    "home":21,
+    "time_open":"08:00:00",
+    "time_close":"20:00:00"}
+    """
