@@ -13,7 +13,6 @@ class List_cities(APIView):
         return Response(serializer.data)
 
 
-
 # GET /city/<city_id>/street/
 class City_street(APIView):
     def get(self, requset, city_id):
